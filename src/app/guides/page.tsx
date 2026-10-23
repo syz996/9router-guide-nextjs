@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import GuideSearch from "@/components/GuideSearch";
 
 export const metadata: Metadata = {
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function GuidesPage() {
-  return <><section className="page-hero"><div className="container"><div className="breadcrumbs"><a href="/">Home</a> / Guides</div><div className="eyebrow">THE KNOWLEDGE BASE</div><h1>Find the guide you need.</h1><p>Search the current collection by client, error, or task. Each guide should be verified against the installed version and current official docs before use.</p></div></section><section className="container page-content"><GuideSearch /></section></>;
+  return <><section className="page-hero"><div className="container"><div className="breadcrumbs"><Link href="/">Home</Link> / Guides</div><div className="eyebrow">THE KNOWLEDGE BASE</div><h1>Find the guide you need.</h1><p>Search the current collection by client, error, or task. Each guide should be verified against the installed version and current official docs before use.</p></div></section><section className="container page-content"><GuideSearch /></section></>;
 }

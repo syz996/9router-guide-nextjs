@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -10,7 +11,7 @@ export default function TermsPage() {
   return (
     <>
       <section className="page-hero"><div className="container">
-        <div className="breadcrumbs"><a href="/">Home</a> / Terms of Use</div>
+        <div className="breadcrumbs"><Link href="/">Home</Link> / Terms of Use</div>
         <div className="eyebrow">SITE POLICIES</div><h1>Terms of Use</h1>
         <p>These terms describe the basic conditions for using 9Router Guide.</p>
         <div className="article-meta"><span>Effective date: October 23, 2026</span></div>

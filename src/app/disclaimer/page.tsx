@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
@@ -10,7 +11,7 @@ export default function DisclaimerPage() {
   return (
     <>
       <section className="page-hero"><div className="container">
-        <div className="breadcrumbs"><a href="/">Home</a> / Disclaimer</div>
+        <div className="breadcrumbs"><Link href="/">Home</Link> / Disclaimer</div>
         <div className="eyebrow">SITE POLICIES</div><h1>Disclaimer</h1>
         <p>Important limitations to keep in mind when following tutorials or troubleshooting suggestions on this website.</p>
         <div className="article-meta"><span>Effective date: October 23, 2026</span></div>

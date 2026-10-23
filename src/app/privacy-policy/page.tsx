@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -10,7 +11,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <section className="page-hero"><div className="container">
-        <div className="breadcrumbs"><a href="/">Home</a> / Privacy Policy</div>
+        <div className="breadcrumbs"><Link href="/">Home</Link> / Privacy Policy</div>
         <div className="eyebrow">SITE POLICIES</div>
         <h1>Privacy Policy</h1>
         <p>This policy explains what information may be processed when you use 9Router Guide.</p>
