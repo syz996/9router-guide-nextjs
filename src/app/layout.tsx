@@ -8,13 +8,21 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: "9Router Guide — Setup, Integrations & Troubleshooting", template: "%s | 9Router Guide" },
   description: site.description,
+  icons: { icon: "/icon.svg" },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     title: "9Router Guide",
     description: site.description,
     url: site.url,
-    siteName: site.name
+    siteName: site.name,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "9Router Guide" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "9Router Guide — Setup, Integrations & Troubleshooting",
+    description: site.description,
+    images: ["/og-image.png"]
   }
 };
 

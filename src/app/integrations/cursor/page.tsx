@@ -1,17 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { articleJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = { title: "Connect 9Router to Cursor", description: "A cautious setup checklist for connecting Cursor to a 9Router endpoint.", alternates: { canonical: "/integrations/cursor/" } };
 
+const jsonLd = articleJsonLd({
+  title: "Connect 9Router to Cursor",
+  description: "A cautious setup checklist for connecting Cursor to a 9Router endpoint.",
+  path: "/integrations/cursor/",
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Integrations", path: "/integrations/" },
+    { name: "Cursor", path: "/integrations/cursor/" }
+  ],
+  datePublished: "2026-10-23",
+  dateModified: "2026-10-23"
+});
+
 export default function CursorPage() {
-  return <><section className="page-hero"><div className="container"><div className="breadcrumbs"><Link href="/">Home</Link> / <Link href="/integrations/">Integrations</Link> / Cursor</div><div className="eyebrow">INTEGRATION GUIDE</div><h1>Connect 9Router to Cursor.</h1><p>Before configuring Cursor, verify the current official requirements for endpoint reachability and supported model settings.</p><div className="article-meta"><span>BEGINNER</span><span>6 MIN READ</span><span>VERIFY AGAINST CURRENT VERSIONS</span></div></div></section><section className="container page-content"><div className="two-column"><article className="article">
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><section className="page-hero"><div className="container"><div className="breadcrumbs"><Link href="/">Home</Link> / <Link href="/integrations/">Integrations</Link> / Cursor</div><div className="eyebrow">INTEGRATION GUIDE</div><h1>Connect 9Router to Cursor.</h1><p>Before configuring Cursor, verify the current official requirements for endpoint reachability and supported model settings.</p><div className="article-meta"><span>BEGINNER</span><span>6 MIN READ</span><span>VERIFY AGAINST CURRENT VERSIONS</span></div></div></section><section className="container page-content"><div className="two-column"><article className="article">
     <div className="article-warning"><strong>Important:</strong> Do not assume a local-only URL such as <code>http://localhost:20128</code> will work in Cursor. The endpoint must be reachable in the way required by your current Cursor setup. Consult the official FAQ first.</div>
     <h2 id="before">Before you begin</h2><ul><li>9Router is running and you have a valid API key.</li><li>You know which endpoint Cursor is expected to use.</li><li>You have confirmed the model ID supported by the endpoint.</li></ul>
     <h2 id="setup">Setup checklist</h2><ol><li>Open the current 9Router official FAQ and find the Cursor-specific instructions.</li><li>Use the documented endpoint for your deployment. For a self-hosted service, confirm secure external reachability before exposing it.</li><li>Copy the correct API key into the client configuration.</li><li>Select a model that appears in the endpoint’s model list.</li><li>Send a small test prompt and record the status/error if it fails.</li></ol>
     <h2 id="errors">If Cursor still fails</h2><ul><li><strong>Connection error:</strong> confirm endpoint DNS, TLS, firewall, and public reachability.</li><li><strong>401:</strong> re-check the key and authorization format.</li><li><strong>Model error:</strong> compare the selected ID with the endpoint’s available model list.</li><li><strong>429/provider error:</strong> inspect provider limits and availability.</li></ul>
     <div className="article-note">Security: avoid exposing an unauthenticated local gateway to the public internet. Use the official security guidance and a protected endpoint.</div>
     <h2 id="official">Official references</h2><p><a className="text-link" href={site.docsUrl} target="_blank" rel="noreferrer">9Router documentation ↗</a> · <a className="text-link" href={site.githubUrl} target="_blank" rel="noreferrer">GitHub repository / FAQ ↗</a></p>
-    <p><em>Editorial note: this is a checklist template. Verify every endpoint and UI label against current releases before publishing as a definitive step-by-step tutorial.</em></p>
   </article><aside className="sidebar"><h3>On this page</h3><a href="#before">Before you begin</a><a href="#setup">Setup checklist</a><a href="#errors">Common errors</a><a href="#official">Official references</a><h3 style={{marginTop:24}}>Related</h3><Link href="/troubleshooting/">Troubleshooting hub</Link><Link href="/integrations/claude-code/">Claude Code setup</Link></aside></div></section></>;
 }

@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
         <div className="article-meta"><span>Effective date: October 23, 2026</span><span>Independent third-party resource</span></div>
       </div></section>
       <section className="container page-content"><article className="article">
-        <div className="article-note">Before publishing, review this policy against your actual hosting, analytics, cookie, embedded-content, and contact-form setup. Update it whenever those practices change.</div>
+        <div className="article-note">This policy should be reviewed against your actual hosting, analytics, cookie, embedded-content, and contact-form setup, and updated whenever those practices change.</div>
         <h2>1. About this website</h2>
         <p>9Router Guide is an independent tutorial and troubleshooting resource. It is not affiliated with, endorsed by, or operated by the 9Router project.</p>
         <h2>2. Information processed when you visit</h2>
@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
         <h2>9. Changes to this policy</h2>
         <p>We may update this policy when the website or its data practices change. The effective date at the top of this page should be updated when a material revision is published.</p>
         <h2>10. Contact</h2>
-        <p>For privacy questions, use the website's published contact channel once one has been configured. Before launch, add a monitored email address or another reliable contact method here. Do not publish this page with a placeholder contact method if users need a way to exercise applicable rights.</p>
+        <p>For privacy questions, use the website's published contact channel. Add a monitored email address or another reliable contact method before going live.</p>
       </article></section>
     </>
   );

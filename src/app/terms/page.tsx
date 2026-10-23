@@ -17,7 +17,7 @@ export default function TermsPage() {
         <div className="article-meta"><span>Effective date: October 23, 2026</span></div>
       </div></section>
       <section className="container page-content"><article className="article">
-        <div className="article-note">This is a general starter template, not legal advice. Review it for your jurisdiction and actual business practices before launch.</div>
+        <div className="article-note">This is general information, not legal advice. Review it for your jurisdiction and actual circumstances.</div>
         <h2>1. Independent resource</h2>
         <p>9Router Guide is an independent third-party website that publishes tutorials, setup notes, comparisons, and troubleshooting information. It is not affiliated with, sponsored by, or endorsed by the 9Router project. Third-party product names and trademarks belong to their respective owners.</p>
         <h2>2. Informational use</h2>
