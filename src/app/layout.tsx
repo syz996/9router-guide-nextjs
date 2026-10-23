@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     description: site.description,
     url: site.url,
     siteName: site.name,
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "9Router Guide" }]
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "9Router Guide", type: "image/jpeg" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "9Router Guide — Setup, Integrations & Troubleshooting",
     description: site.description,
-    images: ["/og-image.png"]
+    images: ["/og-image.jpg"]
   }
 };
 
