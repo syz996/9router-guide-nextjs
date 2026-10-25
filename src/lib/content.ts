@@ -18,7 +18,7 @@ export const guides: Guide[] = [
   },
   {
     title: "Connect 9Router to Cursor",
-    description: "Understand endpoint requirements and configure Cursor without guessing the base URL.",
+    description: "Fill in the base URL, paste your key, pick a model ID.",
     href: "/integrations/cursor/",
     category: "Integrations",
     level: "Beginner",

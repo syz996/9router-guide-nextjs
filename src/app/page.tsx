@@ -14,11 +14,11 @@ export default function HomePage() {
     url: site.url,
     description: site.description
   };
-  const faqData = [
+  const faqData: { question: string; answer: string; href?: string; linkText?: string }[] = [
     { question: "What is 9Router?", answer: "9Router is a routing layer between your AI clients and model providers. This site covers installation, client setup, and troubleshooting for it." },
     { question: "Why won't 9Router connect on Windows?", answer: "Start with the service and port, then check your API key, the model ID, provider quotas, and the client endpoint in that order." },
     { question: "Why does my client return 401?", answer: "A 401 is an authentication problem: the key is missing, wrong, or formatted incorrectly. It is not a model or provider error." },
-    { question: "What should I fill in for the base URL in Cursor?", answer: "Use the endpoint your 9Router instance exposes. For a self-hosted setup, confirm secure external reachability before entering a localhost URL." },
+    { question: "What should I fill in for the base URL in Cursor?", answer: "Use http://localhost:20128/v1 if Cursor runs on the same machine as 9Router. Then paste the API key from http://localhost:20128/dashboard and pick a model ID from your own /v1/models list. For a remote 9Router, replace localhost with an address Cursor can reach.", href: "/integrations/cursor/", linkText: "Step-by-step Cursor setup →" },
     { question: "Is 9Router Guide affiliated with 9Router?", answer: "No. This is an independent third-party resource and is not affiliated with, endorsed by, or operated by the 9Router project." }
   ];
   const faqSchema = faqJsonLd(faqData);
@@ -135,7 +135,7 @@ export default function HomePage() {
           <div className="section-head"><div><div className="eyebrow">QUICK ANSWERS</div><h2>Short answers to the questions everyone starts with.</h2></div></div>
           <div style={{ display: "grid", gap: 24 }}>
             {faqData.map((item) => (
-              <div key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></div>
+              <div key={item.question}><h3>{item.question}</h3><p>{item.answer}{item.href ? <> <Link className="text-link" href={item.href}>{item.linkText}</Link></> : null}</p></div>
             ))}
           </div>
         </div>
