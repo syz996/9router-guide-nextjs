@@ -14,8 +14,7 @@ const jsonLd = articleJsonLd({
     { name: "Guides", path: "/guides/" },
     { name: "Run with Docker", path: "/guides/9router-docker/" }
   ],
-  datePublished: "2026-10-23",
-  dateModified: "2026-10-23"
+  datePublished: "2026-10-23"
 });
 
 export default function DockerPage() {

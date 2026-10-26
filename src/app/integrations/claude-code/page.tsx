@@ -21,8 +21,7 @@ const jsonLd = articleJsonLd({
     { name: "Integrations", path: "/integrations/" },
     { name: "Claude Code", path: "/integrations/claude-code/" }
   ],
-  datePublished: "2026-10-23",
-  dateModified: "2026-10-26"
+  datePublished: "2026-10-23"
 });
 
 export default function ClaudeCodePage() {

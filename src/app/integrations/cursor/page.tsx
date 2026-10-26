@@ -15,15 +15,14 @@ const jsonLd = articleJsonLd({
     { name: "Integrations", path: "/integrations/" },
     { name: "Cursor", path: "/integrations/cursor/" }
   ],
-  datePublished: "2026-10-23",
-  dateModified: "2026-10-25"
+  datePublished: "2026-10-23"
 });
 
 export default function CursorPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <section className="page-hero"><div className="container"><div className="breadcrumbs"><Link href="/">Home</Link> / <Link href="/integrations/">Integrations</Link> / Cursor</div><div className="eyebrow">INTEGRATION GUIDE</div><h1>Connect 9Router to Cursor.</h1><p>Point Cursor at the 9Router OpenAI-compatible endpoint using the override base URL setting.</p><div className="article-meta"><span>BEGINNER</span><span>6 MIN READ</span><span>LAST REVIEW: 2026-10-25</span></div></div></section>
+      <section className="page-hero"><div className="container"><div className="breadcrumbs"><Link href="/">Home</Link> / <Link href="/integrations/">Integrations</Link> / Cursor</div><div className="eyebrow">INTEGRATION GUIDE</div><h1>Connect 9Router to Cursor.</h1><p>Point Cursor at the 9Router OpenAI-compatible endpoint using the override base URL setting.</p><div className="article-meta"><span>BEGINNER</span><span>6 MIN READ</span><span>LAST REVIEW: {site.lastModified}</span></div></div></section>
       <section className="container page-content"><div className="two-column">
         <article className="article">
           <div className="article-warning"><strong>Localhost note:</strong> a <code>http://localhost:20128/v1</code> endpoint only works when Cursor runs on the same machine as 9Router. For a remote setup, use a reachable public URL instead.</div>

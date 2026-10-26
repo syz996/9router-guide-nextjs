@@ -13,8 +13,7 @@ const jsonLd = articleJsonLd({
     { name: "Home", path: "/" },
     { name: "9Router vs OpenRouter", path: "/compare/9router-vs-openrouter/" }
   ],
-  datePublished: "2026-10-23",
-  dateModified: "2026-10-26"
+  datePublished: "2026-10-23"
 });
 
 export default function ComparePage() {

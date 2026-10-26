@@ -8,7 +8,7 @@ export function articleJsonLd(opts: {
   path: string;
   breadcrumbs: Crumb[];
   datePublished: string;
-  dateModified: string;
+  dateModified?: string;
 }) {
   return [
     {
@@ -28,7 +28,7 @@ export function articleJsonLd(opts: {
       description: opts.description,
       url: `${site.url}${opts.path}`,
       datePublished: opts.datePublished,
-      dateModified: opts.dateModified,
+      dateModified: opts.dateModified ?? site.lastModified,
       inLanguage: "en",
       mainEntityOfPage: `${site.url}${opts.path}`,
       author: { "@type": "Organization", name: site.name },

@@ -15,8 +15,7 @@ const jsonLd = articleJsonLd({
     { name: "Guides", path: "/guides/" },
     { name: "Install on Windows", path: "/guides/install-9router-windows/" }
   ],
-  datePublished: "2026-10-23",
-  dateModified: "2026-10-25"
+  datePublished: "2026-10-23"
 });
 
 export default function InstallWindowsPage() {
