@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 import { faqJsonLd } from "@/lib/seo";
 
 export default function HomePage() {
-  const featured = guides.slice(0, 3);
+  const featured = guides.slice(0, 5);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
