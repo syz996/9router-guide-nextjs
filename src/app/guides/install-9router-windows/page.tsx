@@ -4,11 +4,11 @@ import CopyButton from "@/components/CopyButton";
 import { site } from "@/lib/site";
 import { articleJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Install 9Router on Windows", description: "A Windows installation checklist for preparing, launching, and verifying 9Router.", alternates: { canonical: "/guides/install-9router-windows/" } };
+export const metadata: Metadata = { title: "Install 9Router on Windows", description: "Install 9Router on Windows with PowerShell: npm global install, PATH errors, port 20128 conflicts, and where the SQLite data file lives.", alternates: { canonical: "/guides/install-9router-windows/" } };
 
 const jsonLd = articleJsonLd({
   title: "Install 9Router on Windows",
-  description: "A Windows installation checklist for preparing, launching, and verifying 9Router.",
+  description: "Install 9Router on Windows with PowerShell: npm global install, PATH errors, port 20128 conflicts, and where the SQLite data file lives.",
   path: "/guides/install-9router-windows/",
   breadcrumbs: [
     { name: "Home", path: "/" },
@@ -57,7 +57,10 @@ export default function InstallWindowsPage() {
           <h3>If port 20128 is in use or blocked</h3>
           <p>If startup reports the port is already taken, find the process holding it with:</p>
           <div className="code-block-wrap"><pre className="code-block">netstat -ano | findstr :20128</pre><CopyButton text="netstat -ano | findstr :20128"/></div>
-          <p>Stop that process or run 9Router on a different port. <code>http://localhost:20128</code> works without a firewall rule; if you need access from another machine, allow the port through Windows Defender Firewall.</p>
+          <p>Stop that process, or run 9Router on a different port:</p>
+          <div className="code-block-wrap"><pre className="code-block">9router --port 20129</pre><CopyButton text="9router --port 20129"/></div>
+          <p>After changing the port, the dashboard moves to <code>http://localhost:20129/dashboard</code> and the API to <code>http://localhost:20129/v1</code>; update any client that was pointed at <code>20128</code>.</p>
+          <p><code>http://localhost:20128</code> works without a firewall rule; if you need access from another machine, allow the port through Windows Defender Firewall.</p>
           <h2>Need help?</h2>
           <p><Link className="text-link" href="/troubleshooting/">Use the troubleshooting flow →</Link></p>
           <p><a className="text-link" href={site.docsUrl} target="_blank" rel="noreferrer">Official docs ↗</a> · <a className="text-link" href={site.githubUrl} target="_blank" rel="noreferrer">Official GitHub ↗</a></p>
