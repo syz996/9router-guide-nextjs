@@ -63,7 +63,7 @@ export default function InstallWindowsPage() {
           <p><Link className="text-link" href="/troubleshooting/">Use the troubleshooting flow →</Link></p>
           <p><a className="text-link" href={site.docsUrl} target="_blank" rel="noreferrer">Official docs ↗</a> · <a className="text-link" href={site.githubUrl} target="_blank" rel="noreferrer">Official GitHub ↗</a></p>
         </article>
-        <aside className="sidebar"><h3>Install checklist</h3><a href="#prerequisites">Prerequisites</a><a href="#install">Install globally</a><a href="#launch">Start 9Router</a><a href="#dashboard">Dashboard</a><a href="#test">First request</a><a href="#windows">Windows notes</a><h3 style={{marginTop:24}}>Next step</h3><Link href="/troubleshooting/">Troubleshoot errors</Link></aside>
+        <aside className="sidebar"><h3>Install checklist</h3><a href="#prerequisites">Prerequisites</a><a href="#install">Install globally</a><a href="#launch">Start 9Router</a><a href="#dashboard">Dashboard</a><a href="#test">First request</a><a href="#windows">Windows notes</a><h3 style={{marginTop:24}}>Next step</h3><Link href="/troubleshooting/">Troubleshoot errors</Link><Link href="/guides/9router-docker/">Run with Docker</Link></aside>
       </div></section>
     </>
   );

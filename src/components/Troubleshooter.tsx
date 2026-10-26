@@ -41,7 +41,7 @@ export default function Troubleshooter() {
 
   return (
     <div className="diagnostic">
-      <div className="diagnostic-top"><span className="eyebrow">INTERACTIVE DIAGNOSTIC</span><span className="step-pill">Step 1 of 3 · Identify the symptom</span></div>
+      <div className="diagnostic-top"><span className="eyebrow">INTERACTIVE DIAGNOSTIC</span><span className="step-pill">Identify the symptom</span></div>
       <div className="diagnostic-field">
         <label htmlFor="client">Which client are you using?</label>
         <select id="client" value={client} onChange={(e) => setClient(e.target.value as Client)}>
