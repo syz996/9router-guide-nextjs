@@ -49,7 +49,7 @@ export default function CursorPage() {
             <li><strong>429 / provider error:</strong> inspect provider limits and availability in the dashboard.</li>
           </ul>
           <p>To list the models your endpoint actually returns, run this in PowerShell:</p>
-          <div className="code-block-wrap"><pre className="code-block">curl http://localhost:20128/v1/models -H "Authorization: Bearer YOUR_9ROUTER_API_KEY"</pre><CopyButton text={'curl http://localhost:20128/v1/models -H "Authorization: Bearer YOUR_9ROUTER_API_KEY"'}/></div>
+          <div className="code-block-wrap"><pre className="code-block">curl.exe http://localhost:20128/v1/models -H "Authorization: Bearer YOUR_9ROUTER_API_KEY"</pre><CopyButton text={'curl.exe http://localhost:20128/v1/models -H "Authorization: Bearer YOUR_9ROUTER_API_KEY"'}/></div>
           <div className="article-note">Security: avoid exposing an unauthenticated local gateway to the public internet. Use the official security guidance and a protected endpoint.</div>
           <h2 id="official">Official references</h2>
           <p><a className="text-link" href={site.docsUrl} target="_blank" rel="noreferrer">9Router documentation ↗</a> · <a className="text-link" href={site.githubUrl} target="_blank" rel="noreferrer">GitHub repository / FAQ ↗</a></p>

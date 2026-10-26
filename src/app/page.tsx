@@ -39,13 +39,13 @@ export default function HomePage() {
             </div>
             <p className="hero-note">Independent community resource · Not an official 9Router property</p>
           </div>
-          <div className="hero-art" aria-label="Illustration of a terminal health check">
-            <div className="terminal-head"><span className="terminal-dot"/><span className="terminal-dot"/><span className="terminal-dot"/><span className="terminal-label">TERMINAL / HEALTH CHECK</span></div>
-            <div className="terminal-line"><span className="prompt">❯</span><span>curl localhost:20128/health</span></div>
-            <div className="terminal-line"><span className="prompt">↳</span><span>Checking local service…</span></div>
-            <div className="terminal-line"><span className="prompt">↳</span><span>Verifying endpoint response…</span></div>
-            <div className="terminal-success"><strong>● DIAGNOSTIC COMPLETE</strong><br/>Next: test authentication and model availability<br/>Status: <strong>READY FOR NEXT CHECK</strong></div>
-            <div className="hero-art-footer"><span>WORKFLOW / 01</span><span>DOCS THAT HELP YOU DEBUG</span></div>
+          <div className="hero-art" aria-label="Illustration of a terminal quick start">
+            <div className="terminal-head"><span className="terminal-dot"/><span className="terminal-dot"/><span className="terminal-dot"/><span className="terminal-label">TERMINAL / QUICK START</span></div>
+            <div className="terminal-line"><span className="prompt">❯</span><span>npm install -g 9router</span></div>
+            <div className="terminal-line"><span className="prompt">❯</span><span>9router</span></div>
+            <div className="terminal-line"><span className="prompt">↳</span><span>Dashboard: http://localhost:20128/dashboard</span></div>
+            <div className="terminal-success"><strong>● READY</strong><br/>Endpoint: http://localhost:20128/v1<br/>Status: <strong>LISTENING ON 20128</strong></div>
+            <div className="hero-art-footer"><span>WORKFLOW / 01</span><span>INSTALL · START · CONNECT</span></div>
           </div>
         </div>
       </section>

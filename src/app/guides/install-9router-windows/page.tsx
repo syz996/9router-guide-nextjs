@@ -48,11 +48,22 @@ export default function InstallWindowsPage() {
             <li>Copy the API key from the dashboard.</li>
             <li>Point a client at <code>http://localhost:20128/v1</code> and send one short prompt to confirm a response.</li>
           </ol>
+          <h2 id="windows">Windows notes</h2>
+          <h3>Use PowerShell and curl.exe</h3>
+          <p>Run the commands above in PowerShell. For curl checks, use <code>curl.exe</code> — in Windows PowerShell, <code>curl</code> is an alias for <code>Invoke-WebRequest</code> and will not print the raw HTTP response you expect.</p>
+          <h3>If 9router is not recognized</h3>
+          <p>Global npm packages put their CLI shim in npm's global bin directory (usually <code>%AppData%\npm</code>). If PowerShell cannot find <code>9router</code>, check the directory with:</p>
+          <div className="code-block-wrap"><pre className="code-block">npm prefix -g</pre><CopyButton text="npm prefix -g"/></div>
+          <p>Confirm that directory is on your <code>PATH</code>, then open a new terminal window.</p>
+          <h3>If port 20128 is in use or blocked</h3>
+          <p>If startup reports the port is already taken, find the process holding it with:</p>
+          <div className="code-block-wrap"><pre className="code-block">netstat -ano | findstr :20128</pre><CopyButton text="netstat -ano | findstr :20128"/></div>
+          <p>Stop that process or run 9Router on a different port. <code>http://localhost:20128</code> works without a firewall rule; if you need access from another machine, allow the port through Windows Defender Firewall.</p>
           <h2>Need help?</h2>
           <p><Link className="text-link" href="/troubleshooting/">Use the troubleshooting flow →</Link></p>
           <p><a className="text-link" href={site.docsUrl} target="_blank" rel="noreferrer">Official docs ↗</a> · <a className="text-link" href={site.githubUrl} target="_blank" rel="noreferrer">Official GitHub ↗</a></p>
         </article>
-        <aside className="sidebar"><h3>Install checklist</h3><a href="#prerequisites">Prerequisites</a><a href="#install">Install globally</a><a href="#launch">Start 9Router</a><a href="#dashboard">Dashboard</a><a href="#test">First request</a><h3 style={{marginTop:24}}>Next step</h3><Link href="/troubleshooting/">Troubleshoot errors</Link></aside>
+        <aside className="sidebar"><h3>Install checklist</h3><a href="#prerequisites">Prerequisites</a><a href="#install">Install globally</a><a href="#launch">Start 9Router</a><a href="#dashboard">Dashboard</a><a href="#test">First request</a><a href="#windows">Windows notes</a><h3 style={{marginTop:24}}>Next step</h3><Link href="/troubleshooting/">Troubleshoot errors</Link></aside>
       </div></section>
     </>
   );
