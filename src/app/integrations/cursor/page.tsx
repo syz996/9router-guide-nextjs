@@ -15,7 +15,7 @@ const jsonLd = articleJsonLd({
     { name: "Integrations", path: "/integrations/" },
     { name: "Cursor", path: "/integrations/cursor/" }
   ],
-  datePublished: "2026-10-28"
+  datePublished: "2026-10-23"
 });
 
 export default function CursorPage() {
