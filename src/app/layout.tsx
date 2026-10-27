@@ -12,15 +12,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    title: "9Router Guide",
+    title: { default: "9Router Guide — Setup, Integrations & Troubleshooting", template: "%s | 9Router Guide" },
     description: site.description,
-    url: site.url,
+    url: "/",
     siteName: site.name,
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "9Router Guide", type: "image/jpeg" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "9Router Guide — Setup, Integrations & Troubleshooting",
+    title: { default: "9Router Guide — Setup, Integrations & Troubleshooting", template: "%s | 9Router Guide" },
     description: site.description,
     images: ["/og-image.jpg"]
   }

@@ -35,7 +35,9 @@ export default function InstallWindowsPage() {
           <h2 id="launch">3. Start 9Router</h2>
           <p>Keep the terminal open and run:</p>
           <div className="code-block-wrap"><pre className="code-block">9router</pre><CopyButton text="9router"/></div>
-          <p>The service starts and the dashboard opens automatically. Watch the startup output for the listening address and port.</p>
+          <p>The service starts and the dashboard opens automatically. A successful startup looks like this (version and paths vary):</p>
+          <div className="code-block-wrap"><pre className="code-block">{"❯ 9router\n> Server: localhost:20128\n> Dashboard: http://localhost:20128/dashboard\n> Data dir: C:\\Users\\<you>\\AppData\\Roaming\\9router\n> Ready to route ✓"}</pre><CopyButton text="9router"/></div>
+          <p>Watch for the listening address, port, and data directory. If you see an error instead, the Windows notes below cover the two most common causes.</p>
           <h2 id="dashboard">4. Open the dashboard and API endpoint</h2>
           <ul>
             <li>Dashboard: <code>http://localhost:20128/dashboard</code></li>
@@ -61,11 +63,16 @@ export default function InstallWindowsPage() {
           <div className="code-block-wrap"><pre className="code-block">9router --port 20129</pre><CopyButton text="9router --port 20129"/></div>
           <p>After changing the port, the dashboard moves to <code>http://localhost:20129/dashboard</code> and the API to <code>http://localhost:20129/v1</code>; update any client that was pointed at <code>20128</code>.</p>
           <p><code>http://localhost:20128</code> works without a firewall rule; if you need access from another machine, allow the port through Windows Defender Firewall.</p>
+          <h2 id="connect">6. Connect a client</h2>
+          <div className="guide-grid" style={{gridTemplateColumns:"repeat(2,minmax(0,1fr))"}}>
+            <Link className="guide-card" href="/integrations/cursor/"><div className="card-meta"><span>EDITOR</span><span>6 MIN</span></div><h3>Cursor</h3><p>Override OpenAI Base URL + API key + model ID.</p><div className="card-bottom"><span className="level">Beginner</span><span className="arrow">↗</span></div></Link>
+            <Link className="guide-card" href="/integrations/claude-code/"><div className="card-meta"><span>CLI</span><span>8 MIN</span></div><h3>Claude Code</h3><p>Set ANTHROPIC_BASE_URL and ANTHROPIC_AUTH_TOKEN.</p><div className="card-bottom"><span className="level">Intermediate</span><span className="arrow">↗</span></div></Link>
+          </div>
           <h2>Need help?</h2>
           <p><Link className="text-link" href="/troubleshooting/">Use the troubleshooting flow →</Link></p>
           <p><a className="text-link" href={site.docsUrl} target="_blank" rel="noreferrer">Official docs ↗</a> · <a className="text-link" href={site.githubUrl} target="_blank" rel="noreferrer">Official GitHub ↗</a></p>
         </article>
-        <aside className="sidebar"><h3>Install checklist</h3><a href="#prerequisites">Prerequisites</a><a href="#install">Install globally</a><a href="#launch">Start 9Router</a><a href="#dashboard">Dashboard</a><a href="#test">First request</a><a href="#windows">Windows notes</a><h3 style={{marginTop:24}}>Next step</h3><Link href="/troubleshooting/">Troubleshoot errors</Link><Link href="/guides/9router-docker/">Run with Docker</Link></aside>
+        <aside className="sidebar"><h3>Install checklist</h3><a href="#prerequisites">Prerequisites</a><a href="#install">Install globally</a><a href="#launch">Start 9Router</a><a href="#dashboard">Dashboard</a><a href="#test">First request</a><a href="#windows">Windows notes</a><a href="#connect">Connect a client</a><h3 style={{marginTop:24}}>Next step</h3><Link href="/integrations/cursor/">Connect Cursor</Link><Link href="/integrations/claude-code/">Connect Claude Code</Link></aside>
       </div></section>
     </>
   );
