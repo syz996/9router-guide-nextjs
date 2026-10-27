@@ -8,7 +8,7 @@ const lastmodByRoute: Record<string, string> = {
   "/": "2026-10-26",
   "/guides/": "2026-10-24",
   "/integrations/": "2026-10-24",
-  "/integrations/cursor/": "2026-10-26",
+  "/integrations/cursor/": "2026-10-28",
   "/integrations/claude-code/": "2026-10-26",
   "/troubleshooting/": "2026-10-26",
   "/troubleshooting/9router-connection-failed-windows/": "2026-10-26",
