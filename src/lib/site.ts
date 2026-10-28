@@ -2,7 +2,7 @@ export const site = {
   name: "9Router Guide",
   description: "Practical 9Router setup guides, Cursor and Claude Code integrations, and step-by-step Windows and Docker troubleshooting.",
   url: "https://9routerguide.info",
-  lastModified: "2026-10-26",
+  lastModified: "2026-10-28",
   officialUrl: "https://9router.com/",
   docsUrl: "https://docs.9router.com/",
   githubUrl: "https://github.com/decolua/9router"
