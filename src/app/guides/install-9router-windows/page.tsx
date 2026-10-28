@@ -55,6 +55,14 @@ export default function InstallWindowsPage() {
             <Link className="guide-card" href="/integrations/cursor/"><div className="card-meta"><span>EDITOR</span><span>6 MIN</span></div><h3>Cursor</h3><p>Override OpenAI Base URL + API key + model ID.</p><div className="card-bottom"><span className="level">Beginner</span><span className="arrow">↗</span></div></Link>
             <Link className="guide-card" href="/integrations/claude-code/"><div className="card-meta"><span>CLI</span><span>8 MIN</span></div><h3>Claude Code</h3><p>Set ANTHROPIC_BASE_URL and ANTHROPIC_AUTH_TOKEN.</p><div className="card-bottom"><span className="level">Intermediate</span><span className="arrow">↗</span></div></Link>
           </div>
+          <p>
+            Endpoint up but the client still will not talk to it? Before you change the port, read{" "}
+            <Link className="text-link" href="/guides/9router-proxy/">
+              what the proxy actually does
+            </Link>{" "}
+            — which of the three layers you are configuring, and what should answer at
+            localhost:20128/v1.
+          </p>
           <h2 id="windows">Windows notes</h2>
           <h3>Use PowerShell and curl.exe</h3>
           <p>Run the commands above in PowerShell. For curl checks, use <code>curl.exe</code> — in Windows PowerShell, <code>curl</code> is an alias for <code>Invoke-WebRequest</code> and will not print the raw HTTP response you expect.</p>

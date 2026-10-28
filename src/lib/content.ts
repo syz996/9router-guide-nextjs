@@ -41,6 +41,14 @@ export const guides: Guide[] = [
     minutes: 10
   },
   {
+    href: "/guides/9router-proxy/",
+    category: "Core concepts",
+    title: "What the 9Router proxy is",
+    description: "The localhost:20128/v1 endpoint, two curl checks that prove it answers, and how to confirm it is only listening on your own machine.",
+    level: "Beginner",
+    minutes: 5
+  },
+  {
     title: "Run 9Router with Docker",
     description: "The docker run command, DATA_DIR persistence, the official compose file, and how to verify the API.",
     href: "/guides/9router-docker/",

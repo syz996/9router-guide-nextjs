@@ -40,6 +40,14 @@ export default function CursorPage() {
             <li>Add or enable a model ID from your endpoint list (e.g. <code>kr/claude-sonnet-4.5</code>).</li>
             <li>Verify the connection, then send a short test prompt.</li>
           </ol>
+          <p>
+            If the base URL is saved and Cursor still fails,{" "}
+            <Link className="text-link" href="/guides/9router-proxy/">
+              what the proxy actually does
+            </Link>{" "}
+            shows what the endpoint should answer before Cursor is involved at all — and whether the
+            proxy is listening only on this machine.
+          </p>
           <h2 id="errors">If Cursor still fails</h2>
           <ul>
             <li><strong>Connection error:</strong> confirm Cursor and 9Router run on the same machine, and that the port is listening.</li>

@@ -331,7 +331,13 @@ export default function DockerPage() {
                 .
               </li>
             </ol>
-
+           <p>
+              If step 4 still fails, the port is usually bound to the wrong interface —{" "}
+              <Link className="text-link" href="/guides/9router-proxy/#port">
+                how to check which address port 20128 is listening on
+              </Link>{" "}
+              (and why <code>HOSTNAME=0.0.0.0</code> changes who can reach it).
+            </p>
             <h2 id="security">7. Security checklist</h2>
             <p>
               A container that works is not automatically a container that is safe to expose.
@@ -446,6 +452,7 @@ export default function DockerPage() {
             <a href="/guides/install-9router-windows/">Windows install guide</a>
             <a href="/integrations/cursor/">Connect Cursor</a>
             <a href="/integrations/claude-code/">Connect Claude Code</a>
+            <a href="/guides/9router-proxy/">What the proxy actually does</a>
           </aside>
         </div>
       </section>

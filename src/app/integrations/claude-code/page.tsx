@@ -35,6 +35,14 @@ export default function ClaudeCodePage() {
           <p>If Claude Code runs on the same machine as 9Router, the endpoint is:</p>
           <div className="code-block-wrap"><pre className="code-block">http://localhost:20128/v1</pre><CopyButton text="http://localhost:20128/v1"/></div>
           <p>For a remote 9Router, replace <code>localhost</code> with an address Claude Code can reach.</p>
+          <p>
+            Prove the endpoint answers before you set the variables —{" "}
+            <Link className="text-link" href="/guides/9router-proxy/">
+              what the proxy actually does
+            </Link>{" "}
+            gives two curl commands for <code>http://localhost:20128/v1</code>, and explains why{" "}
+            <code>localhost</code> can fail where <code>127.0.0.1</code> works.
+          </p>
           <h2 id="variables">2. Set environment variables</h2>
           <p>PowerShell:</p>
           <div className="code-block-wrap"><pre className="code-block">{powershellEnv}</pre><CopyButton text={powershellEnv}/></div>
