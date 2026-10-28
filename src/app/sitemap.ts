@@ -13,7 +13,7 @@ const lastmodByRoute: Record<string, string> = {
   "/troubleshooting/": "2026-10-26",
   "/troubleshooting/9router-connection-failed-windows/": "2026-10-26",
   "/guides/install-9router-windows/": "2026-10-28",
-  "/guides/9router-docker/": "2026-10-23",
+  "/guides/9router-docker/": "2026-10-28",
   "/compare/9router-vs-openrouter/": "2026-10-26",
   "/about/": "2026-10-23",
   "/privacy-policy/": "2026-10-23",

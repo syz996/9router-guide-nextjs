@@ -7,11 +7,14 @@ const PAGE_URL = `${site.url}/guides/9router-docker/`;
 const DATE_PUBLISHED = "2026-10-23";
 const DATE_MODIFIED = "2026-10-28";
 
+const DOCKERHUB_URL = "https://hub.docker.com/r/decolua/9router";
+
 const description =
   "Deploy 9Router with Docker: the docker run command, DATA_DIR persistence so SQLite survives restarts, the official compose file, image tags, and how to verify the API on port 20128.";
 
 export const metadata: Metadata = {
-  title: "9Router Docker: docker run, Compose & Data Persistence | 9Router Guide",
+  // layout.tsx 的 title 模板已补「| 9Router Guide」，这里不要再写后缀
+  title: "9Router Docker: docker run, Compose & Data Persistence",
   description,
   alternates: { canonical: PAGE_URL },
 };
@@ -41,8 +44,8 @@ const jsonLd = [
   },
 ];
 
-// ── 命令块：全部逐字来自官方 DOCKER.md / docker-compose.yml（v0.5.112） ──
-// 模板字符串里的 \\ 才是输出时的一个反斜杠（shell 换行续行符），别改成 \ 或删掉。
+// ── 命令块：逐字来自官方 DOCKER.md / docker-compose.yml ──
+// 模板字符串里写 \\ ，输出时是一个反斜杠（shell 续行符）。
 
 const quickStart = `docker run -d \\
   -p 20128:20128 \\
@@ -145,11 +148,11 @@ export default function DockerPage() {
             </div>
 
             <p>
-              The project publishes <code>decolua/9router</code> on Docker Hub as a
-              multi-platform image (<code>linux/amd64</code> + <code>linux/arm64</code>), so the
-              same command works on an Intel laptop, an Apple Silicon Mac, and an ARM server.
-              Every command below is copied from the project&apos;s own{" "}
-              <code>DOCKER.md</code> — nothing here is a guess.
+              The project publishes <code>decolua/9router</code> on Docker Hub as a multi-platform
+              image (<code>linux/amd64</code> + <code>linux/arm64</code>), so the same command works
+              on an Intel laptop, an Apple Silicon Mac, and an ARM server. Every command below is
+              copied from the project&apos;s own <code>DOCKER.md</code> and{" "}
+              <code>docker-compose.yml</code> — nothing here is a guess.
             </p>
 
             <h2 id="quickstart">1. Quick start</h2>
@@ -276,8 +279,10 @@ export default function DockerPage() {
             </div>
             <ul>
               <li>
-                <strong>The image tag has no <code>v</code> prefix.</strong> The{" "}
-                <code>v</code> is only on the git tag, so{" "}
+                <strong>
+                  The image tag has no <code>v</code> prefix.
+                </strong>{" "}
+                The <code>v</code> is only on the git tag, so{" "}
                 <code>decolua/9router:v0.5.112</code> will fail to pull. Use{" "}
                 <code>decolua/9router:0.5.112</code>.
               </li>
@@ -288,7 +293,7 @@ export default function DockerPage() {
               </li>
               <li>
                 Prerelease tags (for example <code>v0.5.113-rc.1</code>) do not move{" "}
-                <code>latest</code> — they only publish their own numbered image.
+                <code>latest</code> by default — they only publish their own numbered image.
               </li>
             </ul>
 
@@ -329,8 +334,8 @@ export default function DockerPage() {
 
             <h2 id="security">7. Security checklist</h2>
             <p>
-              A container that works is not automatically a container that is safe to expose. These
-              four defaults come from the official <code>.env.example</code>:
+              A container that works is not automatically a container that is safe to expose.
+              These five defaults come from the official <code>.env.example</code>:
             </p>
             <ul>
               <li>
@@ -359,31 +364,33 @@ export default function DockerPage() {
             <h2 id="pitfalls">8. Five things that go wrong</h2>
             <ol>
               <li>
-                <strong><code>docker compose up</code> exits immediately.</strong> No{" "}
-                <code>.env</code> in the folder — <code>env_file</code> is mandatory. Run{" "}
+                <strong>
+                  <code>docker compose up</code> exits immediately.
+                </strong>{" "}
+                No <code>.env</code> in the folder — <code>env_file</code> is mandatory. Run{" "}
                 <code>cp .env.example .env</code> first.
               </li>
               <li>
-                <strong>Data disappears on restart.</strong> Either <code>DATA_DIR</code> is missing,
-                or you edited the compose <code>environment</code> block. Note that{" "}
-                <code>.env.example</code> sets <code>DATA_DIR=/var/lib/9router</code> — that value is
-                for running from source. Compose overrides it with <code>/app/data</code> via{" "}
+                <strong>Data disappears on restart.</strong> Either <code>DATA_DIR</code> is
+                missing, or you edited the compose <code>environment</code> block. Note that{" "}
+                <code>.env.example</code> sets <code>DATA_DIR=/var/lib/9router</code> — that value
+                is for running from source. Compose overrides it with <code>/app/data</code> via{" "}
                 <code>environment</code>, and <code>environment</code> wins over{" "}
                 <code>env_file</code>. Delete that line and the write lands in{" "}
                 <code>/var/lib/9router</code> inside the container, not on your volume.
               </li>
               <li>
-                <strong>Pull fails with “manifest unknown”.</strong> You added a{" "}
-                <code>v</code> to the image tag, or the tag predates the Docker pipeline. Image tags
-                omit the <code>v</code>.
+                <strong>Pull fails with &ldquo;manifest unknown&rdquo;.</strong> You added a{" "}
+                <code>v</code> to the image tag, or the tag predates the Docker pipeline. Image
+                tags omit the <code>v</code>.
               </li>
               <li>
                 <strong>Port 20128 is mapped but nothing answers.</strong> Bind the app to all
                 interfaces inside the container with <code>-e HOSTNAME=0.0.0.0</code>.
               </li>
               <li>
-                <strong>Headroom shows “offline” in the dashboard.</strong> The image can&apos;t
-                share a network namespace with a host process by accident — use
+                <strong>Headroom shows &ldquo;offline&rdquo; in the dashboard.</strong> The image
+                can&apos;t share a network namespace with a host process by accident — use{" "}
                 <code>host.docker.internal</code>, and on Linux add{" "}
                 <code>--add-host=host.docker.internal:host-gateway</code>.
               </li>
@@ -397,26 +404,31 @@ export default function DockerPage() {
               </Link>
             </p>
             <p>
-              <a className="text-link" href={site.githubUrl} target="_blank" rel="noreferrer">
+              <a
+                className="text-link"
+                href="https://github.com/decolua/9router"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Official repository ↗
-              </a>{" "}
-              ·{" "}
-              <a className="text-link" href={site.docsUrl} target="_blank" rel="noreferrer">
-                Official docs ↗
               </a>{" "}
               ·{" "}
               <a
                 className="text-link"
-                href="https://hub.docker.com/r/decolua/9router"
+                href="https://docs.9router.com/"
                 target="_blank"
                 rel="noreferrer"
               >
+                Official docs ↗
+              </a>{" "}
+              ·{" "}
+              <a className="text-link" href={DOCKERHUB_URL} target="_blank" rel="noreferrer">
                 Docker Hub tags ↗
               </a>
             </p>
             <p className="fine-print">
-              Commands verified against decolua/9router v0.5.112 (2026-10-28). Independent
-              third-party guide, not affiliated with the 9Router project.
+              Commands verified against 9Router 0.5.112 on 2026-10-28. Independent third-party
+              guide, not affiliated with the 9Router project.
             </p>
           </article>
 
@@ -431,9 +443,9 @@ export default function DockerPage() {
             <a href="#security">Security checklist</a>
             <a href="#pitfalls">Common pitfalls</a>
             <h3>Next</h3>
-            <Link href="/guides/install-9router-windows/">Windows install guide</Link>
-            <Link href="/integrations/cursor/">Connect Cursor</Link>
-            <Link href="/integrations/claude-code/">Connect Claude Code</Link>
+            <a href="/guides/install-9router-windows/">Windows install guide</a>
+            <a href="/integrations/cursor/">Connect Cursor</a>
+            <a href="/integrations/claude-code/">Connect Claude Code</a>
           </aside>
         </div>
       </section>

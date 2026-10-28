@@ -42,7 +42,7 @@ export const guides: Guide[] = [
   },
   {
     title: "Run 9Router with Docker",
-    description: "A preparation checklist for reviewing the current official deployment instructions.",
+    description: "The docker run command, DATA_DIR persistence, the official compose file, and how to verify the API.",
     href: "/guides/9router-docker/",
     category: "Deployment",
     level: "Intermediate",

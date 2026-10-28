@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const faqData = [
   { question: "Where should I start with 9Router?", answer: "Start with the install guide for your platform, then confirm the service is running before connecting any client." },
-  { question: "Can I run 9Router with Docker?", answer: "Yes, but confirm the current official Docker image and compose file first. Follow the Docker guide's deployment checklist." },
+  { question: "Can I run 9Router with Docker?", answer: "Yes — one command starts it: docker run -d -p 20128:20128 -v \"$HOME/.9router:/app/data\" -e DATA_DIR=/app/data --name 9router decolua/9router:latest — then open http://localhost:20128. The Docker guide has the compose file and the persistence details." },
   { question: "What if an install step fails?", answer: "Open the troubleshooting hub and work through service, port, credentials, and model checks in order." }
 ];
 const faqJson = faqJsonLd(faqData);
