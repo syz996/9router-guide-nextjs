@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 // lastmod 按各页真实改动日分开维护：改了哪页就更新哪条。
 const lastmodByRoute: Record<string, string> = {
   "/": "2026-10-26",
-  "/guides/": "2026-10-24",
+  "/guides/": "2026-10-29",
   "/integrations/": "2026-10-24",
   "/integrations/cursor/": "2026-10-26",
   "/integrations/claude-code/": "2026-10-26",
