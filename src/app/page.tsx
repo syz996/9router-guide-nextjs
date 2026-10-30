@@ -40,11 +40,11 @@ export default function HomePage() {
             <p className="hero-note">Independent community resource · Not an official 9Router property</p>
           </div>
           <div className="hero-art" aria-label="Illustration of a terminal quick start">
-            <div className="terminal-head"><span className="terminal-dot"/><span className="terminal-dot"/><span className="terminal-dot"/><span className="terminal-label">TERMINAL / QUICK START</span></div>
+            <div className="terminal-head"><span className="terminal-dot" /><span className="terminal-dot" /><span className="terminal-dot" /><span className="terminal-label">TERMINAL / QUICK START</span></div>
             <div className="terminal-line"><span className="prompt">❯</span><span>npm install -g 9router</span></div>
             <div className="terminal-line"><span className="prompt">❯</span><span>9router</span></div>
             <div className="terminal-line"><span className="prompt">↳</span><span>Dashboard: http://localhost:20128/dashboard</span></div>
-            <div className="terminal-success"><strong>● READY</strong><br/>Endpoint: http://localhost:20128/v1<br/>Status: <strong>LISTENING ON 20128</strong></div>
+            <div className="terminal-success"><strong>● READY</strong><br />Endpoint: http://localhost:20128/v1<br />Status: <strong>LISTENING ON 20128</strong></div>
             <div className="hero-art-footer"><span>WORKFLOW / 01</span><span>INSTALL · START · CONNECT</span></div>
           </div>
         </div>
@@ -60,16 +60,16 @@ export default function HomePage() {
         <div className="container feature-grid">
           <div><div className="eyebrow">A CLEARER DEBUGGING PATH</div><h2>One check at a time. Know what to do next.</h2><p>When an AI request fails, the cause can be local service status, credentials, a model ID, provider limits, or client configuration. Separate those layers instead of changing everything at once.</p><Link className="text-link" href="/troubleshooting/">Open troubleshooting hub →</Link></div>
           <div className="feature-list">
-            <div className="feature-row"><span className="feature-check"><Check size={15}/></span><div><h3>Confirm the service first</h3><p>Check whether the server responds before changing your client settings.</p></div></div>
-            <div className="feature-row"><span className="feature-check"><Check size={15}/></span><div><h3>Separate auth from model errors</h3><p>Use the status code and available model list to narrow the cause.</p></div></div>
-            <div className="feature-row"><span className="feature-check"><Check size={15}/></span><div><h3>Keep sensitive details private</h3><p>Redact keys, tokens, email addresses, and other secrets before sharing logs.</p></div></div>
+            <div className="feature-row"><span className="feature-check"><Check size={15} /></span><div><h3>Confirm the service first</h3><p>Check whether the server responds before changing your client settings.</p></div></div>
+            <div className="feature-row"><span className="feature-check"><Check size={15} /></span><div><h3>Separate auth from model errors</h3><p>Use the status code and available model list to narrow the cause.</p></div></div>
+            <div className="feature-row"><span className="feature-check"><Check size={15} /></span><div><h3>Keep sensitive details private</h3><p>Redact keys, tokens, email addresses, and other secrets before sharing logs.</p></div></div>
           </div>
         </div>
       </section>
       <section className="section">
         <div className="container">
           <div className="section-head"><div><div className="eyebrow">UNDERSTAND THE STACK</div><h2>What 9Router sits between.</h2></div><p>9Router forwards requests from your coding tools to the model providers you configure. When one request fails, the cause is usually a single layer—not “everything is broken.”</p></div>
-          <div className="article" style={{maxWidth:780}}>
+          <div className="article" style={{ maxWidth: 780 }}>
             <p>A request moves through five hops before you see a response: the client you type in, the endpoint it calls, the authentication you attach, the model ID you request, and finally the upstream provider. That sequence is also the order to check things in. If you start by editing your client or rotating keys at random, you change several variables at once and learn nothing.</p>
             <p>These guides are built around that idea. Each one changes exactly one variable per step, tells you what a given status code usually means, and points you to the primary source for anything that changes between releases.</p>
             <h3>The five layers, in order</h3>
@@ -87,14 +87,30 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-head"><div><div className="eyebrow">DO THIS FIRST</div><h2>A 60-second connection self-check.</h2></div><p>Before you touch any configuration, work down this list. It usually answers the question faster than a dozen retries.</p></div>
-          <div className="article" style={{maxWidth:780}}>
+          <div className="article" style={{ maxWidth: 780 }}>
             <ul>
-              <li><strong>Is the service up?</strong> Run the health check for your install and confirm it responds.</li>
-              <li><strong>Is the port right?</strong> Use the port from your startup output, not from memory.</li>
-              <li><strong>Is the key correct?</strong> Re-paste it and watch for trailing spaces, missing prefixes, or an expired value.</li>
-              <li><strong>Does the model list include your ID?</strong> If not, the model is where the problem is.</li>
-              <li><strong>Can the client reach the endpoint?</strong> A localhost URL often fails from remote or containerized clients.</li>
-              <li><strong>Is this a provider error?</strong> Check the upstream status code and your quota.</li>
+              <li>
+                <strong>Is the service up?</strong> Run this command in PowerShell to verify that the API responds:
+                <pre className="code-block">
+                  {'curl.exe http://localhost:20128/v1/models -H "Authorization: Bearer <key>"'}
+                </pre>
+                Replace <code>&lt;key&gt;</code> with the API key copied from your 9Router dashboard.
+              </li>
+              <li>
+                <strong>Is the port right?</strong> Use the port from your startup output, not from memory.
+              </li>
+              <li>
+                <strong>Is the key correct?</strong> Re-paste it and watch for trailing spaces, missing prefixes, or an expired value.
+              </li>
+              <li>
+                <strong>Does the model list include your ID?</strong> If not, the model is where the problem is.
+              </li>
+              <li>
+                <strong>Can the client reach the endpoint?</strong> A localhost URL often fails from remote or containerized clients.
+              </li>
+              <li>
+                <strong>Is this a provider error?</strong> Check the upstream status code and your quota.
+              </li>
             </ul>
           </div>
         </div>
@@ -103,7 +119,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-head"><div><div className="eyebrow">QUICK ERROR MAP</div><h2>Common errors, one line each.</h2></div></div>
-          <div className="article" style={{maxWidth:780}}>
+          <div className="article" style={{ maxWidth: 780 }}>
             <p><strong>Connection refused / no response</strong> — the service is not running or the port is wrong. Start there.</p>
             <p><strong>401 Unauthorized</strong> — the key is missing, wrong, or the Authorization header is malformed. Not a model issue.</p>
             <p><strong>404 Not Found</strong> — the path, base URL, or model route does not match your installed version.</p>
@@ -117,7 +133,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-head"><div><div className="eyebrow">WHO THIS IS FOR</div><h2>Built for developers who would rather debug than guess.</h2></div><p>If you are setting up your first local router or moving an existing workflow over, the same checklist applies.</p></div>
-          <div className="article" style={{maxWidth:780}}>
+          <div className="article" style={{ maxWidth: 780 }}>
             <p>These pages assume you can open a terminal and edit a configuration file, but they do not assume you already know the exact command or the current dashboard URL. Where a value changes by release, the guide tells you how to find it from your own output instead of guessing.</p>
             <p>They are also written to be shareable: redact secrets, record your version and platform, and you have a useful error report ready for a maintainer or a colleague.</p>
           </div>
@@ -127,7 +143,7 @@ export default function HomePage() {
       <section className="guides-section">
         <div className="container">
           <div className="section-head"><div><div className="eyebrow">POPULAR STARTING POINTS</div><h2>Useful guides, without the fluff.</h2></div><Link className="text-link" href="/guides/">View all guides →</Link></div>
-          <div className="guide-grid">{featured.map((guide) => <GuideCard guide={guide} key={guide.href}/>)}</div>
+          <div className="guide-grid">{featured.map((guide) => <GuideCard guide={guide} key={guide.href} />)}</div>
         </div>
       </section>
       <section className="section">
@@ -141,7 +157,7 @@ export default function HomePage() {
         </div>
       </section>
       <section className="container">
-        <div className="cta-panel"><div><h2>Something isn’t connecting?</h2><p>Start with the symptom and get a focused list of checks.</p></div><Link className="button-primary" href="/troubleshooting/">Start diagnosis <ArrowUpRight size={15}/></Link></div>
+        <div className="cta-panel"><div><h2>Something isn’t connecting?</h2><p>Start with the symptom and get a focused list of checks.</p></div><Link className="button-primary" href="/troubleshooting/">Start diagnosis <ArrowUpRight size={15} /></Link></div>
       </section>
     </>
   );
