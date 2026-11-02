@@ -56,7 +56,7 @@ const CHECKS: Record<CheckKey, Check> = {
     label: 'Client config',
     title: 'The gateway or the client config, not the update',
     steps: [
-      'curl http://localhost:3000/v1/models -H "Authorization: Bearer <key>"',
+      'curl.exe -i http://localhost:20128/v1/models -H "Authorization: Bearer YOUR_9ROUTER_API_KEY"',
       'A 200 with a model list means the client is pointing somewhere else.',
       'Re-check the base URL and the API key field in Cursor or Claude Code.',
     ],
