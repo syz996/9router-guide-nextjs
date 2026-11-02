@@ -189,6 +189,13 @@ export default function Page() {
               dashboard. The third points the other way: there 9Router is the client and your
               machine is the server.
             </p>
+            <p>
+              Version number still showing the old build after updating?{' '}
+              <Link className="text-link" href="/troubleshooting/9router-update-not-working/">
+                update not working
+              </Link>{' '}
+              walks through the process that keeps port 20128 from picking up the new files.
+            </p>
 
             <h2 id="request">Where the proxy sits in a request</h2>
 

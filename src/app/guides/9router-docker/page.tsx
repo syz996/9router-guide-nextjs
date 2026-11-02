@@ -166,6 +166,13 @@ export default function DockerPage() {
               browser inside it, so the dashboard will <em>not</em> pop up by itself — you open the
               URL manually.
             </p>
+            <p>
+              Docker users hit a different version of this — the container keeps the tag it was built from.{' '}
+              <Link className="text-link" href="/troubleshooting/9router-update-not-working/">
+                update not working
+              </Link>{' '}
+              covers the npm side and what an uninstall leaves behind.
+            </p>
             <div className="article-note">
               On Windows (PowerShell or cmd), <code>$HOME</code> is not expanded the same way and
               Windows paths inside a <code>-v</code> flag are error-prone. Use a Docker named
@@ -331,7 +338,7 @@ export default function DockerPage() {
                 .
               </li>
             </ol>
-           <p>
+            <p>
               If step 4 still fails, the port is usually bound to the wrong interface —{" "}
               <Link className="text-link" href="/guides/9router-proxy/#port">
                 how to check which address port 20128 is listening on
