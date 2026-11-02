@@ -16,10 +16,10 @@ const CHECKS: Record<CheckKey, Check> = {
     label: 'Version check',
     title: 'You are probably looking at an old binary',
     steps: [
-      'npm ls -g 9router -- 9router --version',
-      'Older than 0.5.112 means the update never landed: go to check 2.',
+      'npm ls -g 9router',
+      'npm view 9router version',
     ],
-    note: 'If the version is already 0.5.112, this is not an update problem - jump to check 5.',
+    note: 'An older number means the update never landed - go to check 2. If it already shows 0.5.112, this is not an update problem - jump to check 5.',
   },
   process: {
     label: 'Old process',
