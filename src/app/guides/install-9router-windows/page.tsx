@@ -409,6 +409,10 @@ export default function InstallWindowsPage() {
               only inside a container may be lost when the container
               is removed.
             </p>
+            <p>
+  Running it in a container instead? The <Link href="/guides/9router-docker/">Docker guide</Link> covers the
+  compose file, DATA_DIR, and the five things that usually break.
+</p>
 
             <h2>Need help?</h2>
 
