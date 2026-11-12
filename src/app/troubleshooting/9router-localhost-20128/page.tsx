@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 const PAGE_URL = 'https://9routerguide.info/troubleshooting/9router-localhost-20128/';
-const TITLE = 'What Port Does 9Router Use? localhost:20128 Explained | 9Router Guide';
+const TITLE = 'What Port Does 9Router Use? localhost:20128 Explained';
 const DESC =
     '9Router listens on port 20128. The dashboard lives at /dashboard, the OpenAI-compatible API at /v1 — same port, different paths. What to do when 20128 is already taken.';
 const REVIEWED = '2026-11-02';
