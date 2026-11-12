@@ -150,7 +150,7 @@ export default function Page() {
                         <h2 id="browser">3. Why localhost:20128 shows nothing in a browser</h2>
                         <p>
                             Opening the bare port gives you an empty page or a 404 — that is not a broken install. The UI is served
-                            under <code>/dashboard</code>. If the startup output printed both lines above, the server is up and you simply
+                            under <code>/dashboard</code>. If the server started without an error, the server is up and you simply
                             asked for a path that is not a page.
                         </p>
                         <p>
@@ -219,7 +219,7 @@ export default function Page() {
                         <h2>Still stuck</h2>
                         <p>
                             Paste the output of the <code>netstat</code> line from section 4 and the <code>curl.exe</code> line from section 1.
-                            Between them they say whether the server is up, on which port, and whetherthe request is being answered at all. Include your 9Router version from `npm ls -g 9router` as well.
+                            Between them they say whether the server is up, on which port, and whether the request is being answered at all. Include your 9Router version from <code>npm ls -g 9router</code> as well.
                         </p>
                         <p>
                             <Link className="text-link" href="mailto:hello@9routerguide.info?subject=9Router%20port%2020128">
