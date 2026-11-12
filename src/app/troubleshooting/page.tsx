@@ -70,8 +70,8 @@ export default function TroubleshootingPage() {
                     <span>WINDOWS</span>
                     <span>6 MIN</span>
                   </div>
-                  <h3>Update not working</h3>
-                  <p>The version number did not change, or the command disappeared.</p>
+                 <h3>What port does 9Router use?</h3>
+<p>20128 for the dashboard and the /v1 API — plus what to do when the port is taken.</p>
                   <div className="card-bottom">
                     <span className="level">Beginner</span>
                     <span className="arrow">↗</span>
