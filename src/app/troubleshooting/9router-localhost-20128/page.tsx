@@ -113,10 +113,10 @@ export default function Page() {
                         <h2 id="port">1. The port is 20128, for the dashboard and the API alike</h2>
                         <p>
                             <code>9router</code> starts a single local server on port <code>20128</code>. There is no second port,
-                            no separate frontend to launch, and no Nginx-style proxy to put in front of it. The startup output says so:
+                            no separate frontend to launch, and no Nginx-style proxy to put in front of it. Versions differ, so read what your own install prints rather than a screenshot:
                         </p>
                         <div className="code-block-wrap">
-                            <pre className="code-block">{"$ npm install -g 9router\n$ 9router\n># startup output differs between versions — check the port and dashboard URL it prints ✓"}</pre>
+                            <pre className="code-block">9router</pre>
                         </div>
                         <p>Prove it is listening, before touching any client config:</p>
                         <div className="code-block-wrap">
