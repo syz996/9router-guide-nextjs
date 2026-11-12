@@ -116,7 +116,7 @@ export default function Page() {
                             no separate frontend to launch, and no Nginx-style proxy to put in front of it. The startup output says so:
                         </p>
                         <div className="code-block-wrap">
-                            <pre className="code-block">{"$ npm install -g 9router\n$ 9router\n> Server: localhost:20128\n> Dashboard: localhost:20128/dashboard\n> Ready to route ✓"}</pre>
+                            <pre className="code-block">{"$ npm install -g 9router\n$ 9router\n># startup output differs between versions — check the port and dashboard URL it prints ✓"}</pre>
                         </div>
                         <p>Prove it is listening, before touching any client config:</p>
                         <div className="code-block-wrap">
