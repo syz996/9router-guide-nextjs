@@ -65,6 +65,19 @@ export default function TroubleshootingPage() {
                   </div>
                 </Link>
 
+                <Link className="guide-card" href="/troubleshooting/9router-localhost-20128/">
+                  <div className="card-meta">
+                    <span>WINDOWS</span>
+                    <span>6 MIN</span>
+                  </div>
+                  <h3>Update not working</h3>
+                  <p>The version number did not change, or the command disappeared.</p>
+                  <div className="card-bottom">
+                    <span className="level">Beginner</span>
+                    <span className="arrow">↗</span>
+                  </div>
+                </Link>
+
                 <Link className="guide-card" href="/guides/">
                   <div className="card-meta">
                     <span>GUIDES</span>
