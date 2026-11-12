@@ -273,11 +273,6 @@ export default function Page() {
               Paste the output of the two commands from checks 1 and 2. Those two lines are enough
               to tell which of the six cases you are in.
             </p>
-            <p>
-              <a className="text-link" href="mailto:hello@9routerguide.info?subject=9Router%20update%20not%20working">
-                Send me the output →
-              </a>
-            </p>
 
             <h2>Official references</h2>
             <p>

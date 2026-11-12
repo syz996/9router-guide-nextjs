@@ -221,11 +221,6 @@ export default function Page() {
                             Paste the output of the <code>netstat</code> line from section 4 and the <code>curl.exe</code> line from section 1.
                             Between them they say whether the server is up, on which port, and whether the request is being answered at all. Include your 9Router version from <code>npm ls -g 9router</code> as well.
                         </p>
-                        <p>
-                            <Link className="text-link" href="mailto:hello@9routerguide.info?subject=9Router%20port%2020128">
-                                Send me the output →
-                            </Link>
-                        </p>
 
                         <h2>Official references</h2>
                         <p>
