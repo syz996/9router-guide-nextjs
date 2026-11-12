@@ -106,7 +106,7 @@ export default function Page() {
                 <div className="two-column">
                     <article className="article">
                         <div className="article-note">
-                            <strong>The whole answer in one line:</strong> <code>http://localhost:20128/v1</code> is what clients want.
+                            <strong>The whole answer in one line:</strong> <code>http://localhost:20128/v1</code> is what clients want.{' '}
                             <code>http://localhost:20128/dashboard</code> is what you open in a browser. Both are the same server on port 20128.
                         </div>
 
